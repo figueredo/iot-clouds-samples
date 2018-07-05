@@ -1,0 +1,33 @@
+{
+  "name": "gc-iot-core-device-mqtt",
+  "version": "1.0.0",
+  "description": "A Google Cloud IoT Core device using MQTT bridge",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/figueredo/iot-clouds-samples"
+  },
+  "main": "./cjs/index.js",
+  "license": "MIT",
+  "scripts": {
+    "preinstall": "cd ../../common && npm i && npm run build",
+    "lint": "eslint .",
+    "build": "babel esm --out-dir cjs",
+    "start": "node cjs",
+    "start:dev": "babel-node esm"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0"
+  },
+  "dependencies": {
+    "async-mqtt": "^1.0.1",
+    "common": "file:../../common",
+    "jsonwebtoken": "^8.3.0",
+    "yargs": "^12.0.1"
+  }
+}

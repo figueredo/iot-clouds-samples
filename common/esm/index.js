@@ -1,1 +1,2 @@
-export { Device } from './Device'; // eslint-disable-line import/prefer-default-export
+export { Device } from './Device';
+export { TruncatedExponentialBackoff } from './TruncatedExponentialBackoff';

@@ -1,0 +1,28 @@
+{
+  "name": "common",
+  "version": "1.0.0",
+  "description": "Cloud agnostic elements",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/figueredo/iot-clouds-samples"
+  },
+  "main": "./cjs/index.js",
+  "module": "./esm/index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "babel esm --out-dir cjs"
+  },
+  "dependencies": {
+    "rxjs": "^6.2.1"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0"
+  }
+}

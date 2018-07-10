@@ -1,0 +1,30 @@
+{
+  "name": "gc-iot-core-command",
+  "version": "1.0.0",
+  "description": "A Google Cloud IoT Core application that sends a command to a device",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/figueredo/iot-clouds-samples.git"
+  },
+  "main": "./cjs/index.js",
+  "license": "MIT",
+  "scripts": {
+    "lint": "eslint .",
+    "build": "babel esm --out-dir cjs",
+    "start": "node cjs",
+    "start:dev": "babel-node esm"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "eslint": "^4.19.1",
+    "eslint-config-airbnb": "^17.0.0",
+    "eslint-plugin-import": "^2.13.0",
+    "eslint-plugin-jsx-a11y": "^6.1.0",
+    "eslint-plugin-react": "^7.10.0"
+  },
+  "dependencies": {
+    "googleapis": "^32.0.0",
+    "yargs": "^12.0.1"
+  }
+}

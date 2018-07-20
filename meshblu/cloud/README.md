@@ -7,6 +7,7 @@ This folder contains a Meshblu cloud Docker container to be used with the exampl
 * HTTP protocol adapter
 * MQTT protocol adapter
 * Socket.io adapter
+* Websocket adapter
 
 ## Quickstart
 

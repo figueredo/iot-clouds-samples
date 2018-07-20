@@ -45,6 +45,20 @@ services:
       - JOB_LOG_REDIS_URI=redis://redis:6379
     ports:
       - '3000:80'
+  protocol-adapter-mqtt:
+    image: octoblu/meshblu-core-protocol-adapter-mqtt:v2.1.5
+    depends_on:
+      - redis
+      - dispatcher
+      - worker-webhook
+      - firehose-socketio
+    environment:
+      - REDIS_URI=redis://redis:6379
+      - CACHE_REDIS_URI=redis://redis:6379
+      - JOB_LOG_REDIS_URI=redis://redis:6379
+      - FIREHOSE_REDIS_URI=redis://redis:6379
+    ports:
+      - '1883:1883'
   mongo:
     image: mongo
     expose:

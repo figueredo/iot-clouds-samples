@@ -5,6 +5,7 @@ This folder contains a Meshblu cloud Docker container to be used with the exampl
 * Core webhook worker
 * Socket.io firehose
 * HTTP protocol adapter
+* MQTT protocol adapter
 
 ## Quickstart
 

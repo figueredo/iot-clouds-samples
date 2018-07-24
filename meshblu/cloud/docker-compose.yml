@@ -90,6 +90,10 @@ services:
       - FIREHOSE_REDIS_URI=redis://redis:6379
     ports:
       - '3002:80'
+  webhook:
+    build: ../webhook
+    ports:
+      - '4000:80'
   mongo:
     image: mongo
     expose:

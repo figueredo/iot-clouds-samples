@@ -20,7 +20,16 @@ yargs // eslint-disable-line no-unused-expressions
   .command(
     'register',
     'Register a device.',
-    {},
+    (_yargs) => {
+      _yargs
+        .options({
+          forward: {
+            description: 'Forward messages to webhook',
+            type: 'boolean',
+            default: false,
+          },
+        });
+    },
     (args) => {
       const manager = new MeshbluSocketIO({
         hostname: args.hostname,
@@ -29,7 +38,24 @@ yargs // eslint-disable-line no-unused-expressions
       });
 
       manager.on('ready', () => {
-        manager.register({}, (device) => {
+        const options = {};
+        if (args.forward) {
+          const webhook = {
+            type: 'webhook',
+            url: 'http://webhook',
+            method: 'POST',
+          };
+          options.meshblu = {
+            forwarders: {
+              version: '2.0.0',
+              message: { sent: [webhook] },
+              broadcast: { sent: [webhook] },
+              configure: { sent: [webhook], received: [webhook] },
+              unregister: { received: [webhook] },
+            },
+          };
+        }
+        manager.register(options, (device) => {
           console.log('Device registered');
           console.log(`UUID: ${device.uuid}`);
           console.log(`Token: ${device.token}`);
